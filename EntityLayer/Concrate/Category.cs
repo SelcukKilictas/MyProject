@@ -19,7 +19,7 @@ namespace EntityLayer.Concrate
 
         public bool CategoryStatus { get; set; }
 
-
+        public List<Blog> Blogs { get; set; }
 
 
     }
