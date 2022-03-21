@@ -12,8 +12,6 @@ namespace DataAccesLayer.EntityFrameWork
 {
     public class EfWriterRepository : GenericRepository<Writer>, IWriterDal
     {
-        public EfWriterRepository(MyContext myContext) : base(myContext)
-        {
-        }
+       
     }
 }

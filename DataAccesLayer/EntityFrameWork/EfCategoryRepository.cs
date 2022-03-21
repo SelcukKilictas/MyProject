@@ -12,8 +12,6 @@ namespace DataAccesLayer.EntityFrameWork
 {
     public class EfCategoryRepository : GenericRepository<Category>, ICategoryDal
     {
-        public EfCategoryRepository(MyContext myContext) : base(myContext)
-        {
-        }
+       
     }
 }

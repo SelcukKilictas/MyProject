@@ -12,8 +12,6 @@ namespace DataAccesLayer.EntityFrameWork
 {
     public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
     {
-        public EfBlogRepository(MyContext myContext) : base(myContext)
-        {
-        }
+        
     }
 }

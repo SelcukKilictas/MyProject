@@ -12,8 +12,6 @@ namespace DataAccesLayer.EntityFrameWork
 {
     public class EfAboutRepository : GenericRepository<About>, IAboutDal
     {
-        public EfAboutRepository(MyContext myContext) : base(myContext)
-        {
-        }
+        
     }
 }

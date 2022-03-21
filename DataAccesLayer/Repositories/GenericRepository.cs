@@ -11,38 +11,42 @@ namespace DataAccesLayer.Repositories
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
 
-        private readonly MyContext _myContext;
+        
 
-        public GenericRepository(MyContext myContext)
-        {
-            _myContext = myContext;
-        }
+        
         public void Delete(T t)
         {
-            _myContext.Remove(t);
-            _myContext.SaveChanges();
+            using var c = new MyContext();
+            c.Remove(t);
+            c.SaveChanges();
         }
 
         public T GetByID(int id)
         {
-            return _myContext.Set<T>().Find(id);
+            using var c = new MyContext();
+
+            return c.Set<T>().Find(id);
         }
 
         public List<T> GetListAll()
         {
-           return _myContext.Set<T>().ToList();
+            using var c = new MyContext();
+
+            return c.Set<T>().ToList();
         }
 
         public void Insert(T t)
         {
-            _myContext.Add(t);
-            _myContext.SaveChanges();
+            using var c = new MyContext();
+            c.Add(t);
+            c.SaveChanges();
         }
 
         public void Update(T t)
         {
-            _myContext.Update(t);
-            _myContext.SaveChanges();
+            using var c = new MyContext();
+            c.Update(t);
+            c.SaveChanges();
         }
     }
 }
