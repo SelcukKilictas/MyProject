@@ -23,7 +23,7 @@ namespace EntityLayer.Concrate
 
         public string WriterPassword { get; set; }
 
-        public string WriterStatus { get; set; }
+        public bool WriterStatus { get; set; }
 
     }
 }

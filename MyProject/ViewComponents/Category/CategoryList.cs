@@ -2,13 +2,13 @@
 using DataAccesLayer.EntityFrameWork;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyProject.Controllers
+namespace MyProject.ViewComponents.Category
 {
-    public class CategoryController : Controller
+    public class CategoryList:ViewComponent
     {
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
 
-        public IActionResult Index()
+        public IViewComponentResult Invoke()
         {
             var values = cm.GetList();
             return View(values);
