@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrate
 
         public void CommentAdd(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentDal.Insert(comment);
         }
 
 
