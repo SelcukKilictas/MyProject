@@ -67,7 +67,7 @@ namespace MyProject
             app.UseAuthentication();
 
 
-            app.UseSession();
+           
             app.UseRouting();
 
             app.UseAuthorization();
