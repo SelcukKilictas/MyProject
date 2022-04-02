@@ -18,9 +18,29 @@ namespace BusinessLayer.Concrate
             _newsLetterDal = newsLetterDal;
         }
 
-        public void AddNewsLetter(NewsLetter newsLetter)
+        public NewsLetter GetById(int id)
         {
-            _newsLetterDal.Insert(newsLetter);
+           return _newsLetterDal.GetByID(id);   
+        }
+
+        public List<NewsLetter> GetList()
+        {
+           return _newsLetterDal.GetListAll();
+        }
+
+        public void TAdd(NewsLetter t)
+        {
+            _newsLetterDal.Insert(t);
+        }
+
+        public void TDelete(NewsLetter t)
+        {
+           _newsLetterDal.Delete(t);
+        }
+
+        public void TUpdate(NewsLetter t)
+        {
+            _newsLetterDal.Update(t);
         }
     }
 }

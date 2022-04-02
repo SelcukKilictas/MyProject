@@ -25,5 +25,7 @@ namespace EntityLayer.Concrate
 
         public bool AboutStatus { get; set; }
 
+        
+
     }
 }
