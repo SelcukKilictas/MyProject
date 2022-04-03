@@ -25,13 +25,13 @@ namespace MyProject.Controllers
             p.CommentDate=DateTime.Parse(DateTime.Now.ToShortDateString());
             p.CommentStatus = true;
             p.BlogID = 6;
-            cm.CommentAdd(p);
+            cm.TAdd(p);
             return PartialView();
         }
 
         public PartialViewResult CommentListByBlog(int id)
         {
-            var values = cm.GetList(id);
+            var values = cm.GetById(id);
             return PartialView(values);
         }
     }
