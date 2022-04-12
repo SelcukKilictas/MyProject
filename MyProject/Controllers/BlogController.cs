@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using FluentValidation.Results;
 using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace MyProject.Controllers
 {
@@ -35,6 +38,15 @@ namespace MyProject.Controllers
         [HttpGet]
         public IActionResult BlogAdd()
         {
+            CategoryManager cm=new CategoryManager(new EfCategoryRepository());
+            List<SelectListItem> categoryValues = (from x in cm.GetList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.CategoryName,
+                                                       Value = x.CategoryID.ToString()
+                                                   }).ToList();
+
+            ViewBag.cV=categoryValues;
 
             return View();
         }
